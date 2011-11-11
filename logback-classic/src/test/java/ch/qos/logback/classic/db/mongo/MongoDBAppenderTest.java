@@ -95,7 +95,7 @@ public class MongoDBAppenderTest {
     log.info(testName.getMethodName());
 
     //then
-    assertThat(sc.isErrorFree()).isFalse();
+    assertThat(sc.isErrorFree(0)).isFalse();
     sc.containsException(IOException.class);
   }
 

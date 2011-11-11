@@ -70,7 +70,7 @@ public class MongoDBAppenderTest {
     appender.doAppend(new AccessEvent(request, response, new DummyServerAdapter(request, response)));
 
     //then
-    assertThat(new StatusChecker(ac).isErrorFree()).isTrue();
+    assertThat(new StatusChecker(ac).isErrorFree(0)).isTrue();
   }
 
   @Test
