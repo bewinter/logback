@@ -27,8 +27,8 @@ public class MongoDBAppender extends MongoDBAppenderBase<ILoggingEvent> {
     doc.append("timeStamp", new Date(event.getTimeStamp()));
     doc.append("level", event.getLevel().levelStr);
     doc.append("thread", event.getThreadName());
-    if (event.getMdc() != null && !event.getMdc().isEmpty())
-      doc.append("mdc", event.getMdc());
+    if (event.getMDCPropertyMap() != null && !event.getMDCPropertyMap().isEmpty())
+      doc.append("mdc", event.getMDCPropertyMap());
     doc.append("logger", event.getLoggerName());
     if (includeCallerData)
       doc.append("callerData", toDocument(event.getCallerData()));
